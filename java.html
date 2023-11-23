@@ -1,116 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-     function VisualizzaLista(lista) {
-        if (lista.lenght == 0 ) {
-            alert("la lista è vuota");
-            return
-            
-        }else{
-        alert("lista attuale")
-        lista.forEach(function(elemento,indice) {
-            alert(indice + ". " + elemento)
-            
-        })};
-        
-     }   
-
-
-    function aggiungiElemento(lista) {
-    var elemento = prompt("Inserisci un elemento: ");
-    lista.push(elemento);
-    alert(elemento + " aggiunto con successo.");
-}
-
-function EliminaElemento(lista) {
-    if (lista.lenght == 0) {
-        alert("non c'è nulla da eliminare")
-        return
-    }
-    alert("Lista attuale")
-    VisualizzaLista(lista);
-    if(indice >=0 && indice<lista.lenght){
-    var ElementoRimosso = lista.splice(indice, 1)[0]
-    alert("hai rimosso "+ ElementoRimosso, " dalla lista")}
-else{
-    alert("Indice non valido")
-
-}}
-
-function OrdineAlfabetico(lista) {
-    lista.sort()
-    alert("Lista ordinata in ordine alfabetico")
-}
-
-function ModificaLista(lista) {
-    if (lista.lenght == 0) {
-        alert("non c'è nulla da modificare")
-        return
-        
-    }
-    alert("lista attuale")
-    VisualizzaLista(lista);
-    var indice = parseInt(prompt("Inserisci l'indice dell'elemento che vuoi modificare"))
-    if (indice>=0 && indice<lista.lenght) {
-        var nuovoValore = prompt("inserisci nuovo valore")
-        lista[indice]=nuovoValore
-        alert("elemento modificato")
-        VisualizzaLista(lista)
-        
-        
-    }else{
-        alert("Indice non esiste nella lista")
-    }
-    
-}
-
-function EliminazioneLista(lista) {
-    lista.lenght=0
-    alert("hai eliminato la lista")
-}
-        
-
-
-function main() {
     var lista = []
-    while (true) {
+        function VisualizzaLista(lista) {
+            if (lista.lenght == 0) {
+                alert("la lista è vuota");
+                return
 
-    switch (operazione = parseInt(prompt("premere 1 per aggiungere un elemento alla lista\n\npremere 2 per eliminare un elemento dalla lista\n\npremere 3 per ordina la lista in ordine alfabetico\n\npremere 4 per modificare un elemento dalla lista\n\npremere 5 per eliminare la lista\n\npremere 6 per visualizzare la lista\n\npremere 0 per chiudere la lista"))) {
-        case 1:
-        aggiungiElemento(lista);
-            break;
-            case 2:
-        EliminaElemento(lista);
-            break;
-            case 3:
-        OrdineAlfabetico(lista);
-            break;
-            case 4:
-        ModificaLista(lista);
-            break;
-            case 5:
-        EliminazioneLista(lista);
-            break;
-            case 6:
-        VisualizzaLista(lista);
-            break;
-        default:
-            break;
-    }
-    
-}
+            } else {
+                alert("lista attuale")
+                lista.forEach(function (elemento, indice) {
+                    alert(indice + ". " + elemento)
 
-}
-main();
+                })
+            };
+
+        }
+
+
+        function aggiungiElemento(lista) {
+            var elemento = prompt("Inserisci un elemento: ");
+            lista.push(elemento);
+            alert(elemento + " aggiunto con successo.");
+        }
+
+        function EliminaElemento(lista) {
+            if (lista.lenght == 0) {
+                alert("non c'è nulla da eliminare")
+                return
+            }
+            alert("Lista attuale")
+            VisualizzaLista(lista);
+            if (indice >= 0 && indice < lista.lenght) {
+                var ElementoRimosso = lista.splice(indice, 1)[0]
+                alert("hai rimosso " + ElementoRimosso, " dalla lista")
+            }
+            else {
+                alert("Indice non valido")
+
+            }
+        }
+
+        function OrdineAlfabetico(lista) {
+            lista.sort()
+            alert("Lista ordinata in ordine alfabetico")
+        }
+
+        function ModificaLista(lista) {
+            if (lista.lenght == 0) {
+                alert("non c'è nulla da modificare")
+                return
+
+            }
+            alert("lista attuale")
+            VisualizzaLista(lista);
+            var indice = parseInt(prompt("Inserisci l'indice dell'elemento che vuoi modificare"))
+            if (indice >= 0 && indice < lista.lenght) {
+                var nuovoValore = prompt("inserisci nuovo valore")
+                lista[indice] = nuovoValore
+                alert("elemento modificato")
+                VisualizzaLista(lista)
+
+
+            } else {
+                alert("Indice non esiste nella lista")
+            }
+
+        }
+
+        function EliminazioneLista() {
+            
+            alert("hai eliminato la lista")
+            return []
+        }
+
+
+
+        function main() {
+            
+            while (true) {
+
+                switch (operazione = parseInt(prompt("premere 1 per aggiungere un elemento alla lista\n\npremere 2 per eliminare un elemento dalla lista\n\npremere 3 per ordina la lista in ordine alfabetico\n\npremere 4 per modificare un elemento dalla lista\n\npremere 5 per eliminare la lista\n\npremere 6 per visualizzare la lista\n\npremere 0 per chiudere la lista"))) {
+                    case 1:
+                        aggiungiElemento(lista);
+                        break;
+                    case 2:
+                        EliminaElemento(lista);
+                        break;
+                    case 3:
+                        OrdineAlfabetico(lista);
+                        break;
+                    case 4:
+                        ModificaLista(lista);
+                        break;
+                    case 5:
+                        lista =EliminazioneLista();
+                        break;
+                    case 6:
+                        VisualizzaLista(lista);
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+
+        }
+        main();
 
 
 
     </script>
 </body>
+
 </html>
